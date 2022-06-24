@@ -19,7 +19,7 @@ def main():
             num_rows_non_suicide += 1
         else:
             # debug
-            print("found other label: %s" % (label))
+            print("found other label on row %d: %s" % (i, label))
             num_rows_other_label += 1
 
     print("number of rows: %d" % (num_rows))

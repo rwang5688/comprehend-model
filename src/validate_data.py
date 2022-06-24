@@ -10,9 +10,9 @@ def main():
     num_rows_suicide = 0
     num_rows_non_suicide=0
     num_rows_other_label=0
-    df = df.reset_index()
-    for row in df.iterrows():
-        label = row[0]
+    for i in range(len(df)):
+        label = df.iloc[i,0]
+        #print("label: %s" % (label))
         if label == "suicide":
             num_rows_suicide += 1
         elif label == "non-suicide":

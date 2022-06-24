@@ -7,8 +7,8 @@ def main():
     # input file name base
     file_name_base = 'suicide_detection'
     input_file_name = file_name_base + '.csv'
-    clean_file_name = file_name_base + '-clean.csv'
-    error_file_name = file_name_base + '-error.csv'
+    clean_file_name = file_name_base + '_clean.csv'
+    error_file_name = file_name_base + '_error.csv'
 
     # read csv with latin-1 encoding
     df = pd.read_csv(input_file_name, sep=',', encoding='latin-1')
@@ -31,8 +31,8 @@ def main():
 
     # export csv with latin-1 encoding
     clean_df = pd.concat([suicide_df, non_suicide_df], ignore_index = True)
-    clean_df.to_csv(clean_file_name, sep=',', encoding='latin-1')
-    other_label_df.to_csv(error_file_name, sep=',', encoding='latin-1')
+    clean_df.to_csv(clean_file_name, sep=',', encoding='latin-1', index=False)
+    other_label_df.to_csv(error_file_name, sep=',', encoding='latin-1', index=False)
 
 
 if __name__ == '__main__':
